@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void printFib(int num){
+	int A[2] = { 1, 1 };
+	for (int i = 0; i <= num;++i){
+		printf("Fib(%3d):%6d\n", i, A[i & 1]);
+		A[i & 1] += A[i+1 & 1];
+	}
+}
+
+int main(void){
+	printFib(10);
+	system("pause");
+	return 0;
+}
